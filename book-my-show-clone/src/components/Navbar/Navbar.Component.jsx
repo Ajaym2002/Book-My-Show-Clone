@@ -1,5 +1,6 @@
 import React from 'react';
 import { BiChevronDown, BiMenu, BiSearch } from "react-icons/bi";
+import { Link } from "react-router-dom";
 function NavSm(){
     return <>
         <div className="text-white flex items-center justify-between">
@@ -27,7 +28,7 @@ function NavMd(){
 
 function NavLg(){
     return <>
-        <div className="container flex mx-auto px-4 items-center justify-between">
+        <div className="container flex mx-auto px-4 pb-3 items-center justify-between">
             <div className="flex items-center w-1/2 gap-3">
                 <div className="w-10 h-10">
                     <img src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png" alt="logo" className="w-full h-full"/>
@@ -45,22 +46,56 @@ function NavLg(){
                 </div>
             </div>
         </div>
+        <div className='bg-darkBackground-800 p-1 pt-2'>
+            <div className='container mx-auto px-4 flex items-center justify-between'>
+                <div className='flex gap-5'>
+                    <div className="text-gray-300 font-medium text-sm cursor-pointer hover:text-white">
+                        <Link to={'/'}>Home</Link>
+                    </div>
+                    <div className="text-gray-300 font-medium text-sm cursor-pointer hover:text-white">
+                        <Link to={'/tv'}>Tv Shows</Link>
+                    </div>
+                    <div className="text-gray-300 font-medium text-sm cursor-pointer hover:text-white">
+                        Events
+                    </div>
+                    <div className="text-gray-300 font-medium text-sm cursor-pointer hover:text-white">
+                        Sports
+                    </div>
+                    <div className="text-gray-300 font-medium text-sm cursor-pointer hover:text-white">
+                        Activities
+                    </div>
+                </div>
+                <div className='flex gap-4'>
+                    <div className="text-gray-300 font-medium text-sm cursor-pointer hover:text-white">
+                        Offers
+                    </div>
+                    <div className="text-gray-300 font-medium text-sm cursor-pointer hover:text-white">
+                        Gift Cards
+                    </div>
+                </div>
+            </div>
+        </div>
     </>
 }
 
 const Navbar = () => {
     return (
-        <nav className="bg-darkBackground-700 px-3 py-4">
-            <div className="md:hidden">
-                <NavSm/>
-            </div>
-            <div className="hidden md:flex lg:hidden">
-                <NavMd/>
-            </div>
-            <div className="hidden md:hidden lg:flex">
-                <NavLg/>
-            </div>
-        </nav>
+        <>
+            <nav className="bg-darkBackground-700 px-3 py-4">
+                <div className="md:hidden">
+                    <NavSm/>
+                </div>
+                <div className="hidden md:flex lg:hidden">
+                    <NavMd/>
+                </div>
+
+            </nav>
+            <nav className='bg-darkBackground-700'>
+                <div className="hidden md:hidden lg:block">
+                    <NavLg/>
+                </div>
+            </nav>
+        </>
     )
 }
 

@@ -50,6 +50,7 @@ const HomePage = () => {
              title="Recommended Movies"
              subtitle="List of recommended movies"
              posters={recommendedMovies}
+             vote_average={recommendedMovies}
              isDark={false}
              />
         </div>
@@ -64,6 +65,7 @@ const HomePage = () => {
                 title="Premiers"
                 subtitle="Brand new release every friday"
                 posters={premierMovies}
+                vote_average={premierMovies}
                 isDark={true}
                 />
             </div>
@@ -73,6 +75,7 @@ const HomePage = () => {
             title="Online Streaming Events"
             subtitle="Online streaming events"
             posters={onlineStreamEvents}
+            vote_average={onlineStreamEvents}
             isDark={false}
             />
         </div>

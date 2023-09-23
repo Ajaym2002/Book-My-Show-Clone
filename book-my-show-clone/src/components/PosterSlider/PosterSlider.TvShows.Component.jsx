@@ -2,10 +2,10 @@ import React from "react";
 
 import Slider from "react-slick";
 
-import Poster from "../Poster/Poster.Component";
+import PosterTvShows from "../Poster/Poster.TvShows.Component";
 
-const PosterSlider = (props) => {
-  const { title, subtitle, posters, vote_average, isDark, config } = props;
+const PosterSliderTvShows = (props) => {
+  const { name, subtitle, posters, vote_average, isDark, config } = props;
 
   const settings = {
     dots: true,
@@ -46,7 +46,7 @@ const PosterSlider = (props) => {
             isDark ? "text-white" : "text-black"
           }`}
         >
-          {title}
+          {name}
         </h3>
         <p className={`text-sm ${isDark ? "text-white" : "text-black"}`}>
           {subtitle}
@@ -54,11 +54,11 @@ const PosterSlider = (props) => {
       </div>
       <Slider {...settings}>
         {posters.map((each, index) => (
-          <Poster {...each} isDark={isDark} key={index} />
+          <PosterTvShows {...each} isDark={isDark} key={index} />
         ))}
       </Slider>
     </>
   );
 };
 
-export default PosterSlider;
+export default PosterSliderTvShows;
